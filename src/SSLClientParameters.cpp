@@ -2,7 +2,7 @@
 
 // fix for non-exception arduino platforms (Feather and Teensy 4.0)
 namespace std {
-    void __attribute__((weak)) __throw_length_error(char const*) {}
+    void __attribute__((weak)) __throw_length_error(char const*) {while(1);}
 }
 
 
