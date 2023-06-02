@@ -1,6 +1,12 @@
 # SSLClient
 
-![CI](https://github.com/OPEnSLab-OSU/SSLClient/workflows/CI/badge.svg)
+Elysics changes: Fix compile warning
+
+>   SSLClient/src/SSLClientParameters.cpp:5:67: warning: 'noreturn' function does return\
+>      void __attribute__((weak)) __throw_length_error(char const*) {}
+
+
+## Info
 
 SSLClient adds [TLS 1.2](https://www.websecurity.symantec.com/security-topics/what-is-ssl-tls-https) functionality to any network library implementing the [Arduino Client interface](https://www.arduino.cc/en/Reference/ClientConstructor), including the Arduino [EthernetClient](https://www.arduino.cc/en/Reference/EthernetClient) and [WiFiClient](https://www.arduino.cc/en/Reference/WiFiClient) classes. SSLClient was created to integrate TLS seamlessly with the Arduino infrastructure using [BearSSL](https://bearssl.org/) as an underlying TLS engine. Unlike [ArduinoBearSSL](https://github.com/arduino-libraries/ArduinoBearSSL), SSLClient is completly self-contained, and does not require any additional hardware (other than a network connection).
 
