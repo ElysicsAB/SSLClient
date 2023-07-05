@@ -48,6 +48,10 @@ SSLClient::SSLClient(   Client& client,
     br_ssl_engine_set_buffer(&m_sslctx.eng, m_iobuf, sizeof m_iobuf, duplex);
 }
 
+void SSLClient::replaceTrustAnchors(const br_x509_trust_anchor *trust_anchors, const size_t trust_anchors_num) {
+    br_client_init_TLS12_only(&m_sslctx, &m_x509ctx, trust_anchors, trust_anchors_num);
+}
+
 /* see SSLClient.h*/
 int SSLClient::connect(IPAddress ip, uint16_t port) {
     const char* func_name = __func__;

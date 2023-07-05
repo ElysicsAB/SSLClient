@@ -104,6 +104,8 @@ public:
     //= Functions implemented in SSLClient.cpp
     //========================================
 
+    void replaceTrustAnchors(const br_x509_trust_anchor *trust_anchors, const size_t trust_anchors_num);
+
     /**
      * @brief Connect over SSL to a host specified by an IP address.
      * 
