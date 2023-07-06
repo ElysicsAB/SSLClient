@@ -21,21 +21,26 @@
 #include "SSLClient.h"
 
 /* see SSLClient.h */
-SSLClient::SSLClient( Client& client )  : m_client(client) {
+SSLClient::SSLClient(  Client& client,
+                       const int analog_pin,
+                       const size_t max_sessions,
+                       const DebugLevel debug
+                    )
+                      : m_client(client)
+                      , m_analog_pin(analog_pin)
+                      , m_debug(debug)
+                      , m_sessions()
+                      , m_max_sessions(max_sessions)
+                      , m_is_connected(false)
+                      , m_write_idx(0)
+                       , m_br_last_state(0)
+                       {
 }
 
 void SSLClient::initBear(   const br_x509_trust_anchor *trust_anchors, 
-                        const size_t trust_anchors_num, 
-                        const int analog_pin, 
-                        const size_t max_sessions,
-                        const DebugLevel debug)
-    : m_sessions()
-    , m_max_sessions(max_sessions)
-    , m_analog_pin(analog_pin)
-    , m_debug(debug)
-    , m_is_connected(false)
-    , m_write_idx(0)
-    , m_br_last_state(0) {
+                             const size_t trust_anchors_num, 
+                        )
+                        {
 
     setTimeout(30*1000);
     // zero the iobuf just in case it's still garbage
