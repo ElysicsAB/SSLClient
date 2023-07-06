@@ -89,12 +89,10 @@ public:
      * @param trust_anchors Trust anchors used in the verification 
      * of the SSL server certificate. Check out TrustAnchors.md for more info.
      * @param trust_anchors_num The number of objects in the trust_anchors array.
-     * @param analog_pin An analog pin to pull random bytes from, used in seeding the RNG.
      * @param max_sessions The maximum number of SSL sessions to store connection information from.
      * @param debug The level of debug logging (use the ::DebugLevel enum).
      */
     explicit SSLClient(  Client& client,
-                         const int analog_pin,
                          const size_t max_sessions = 1,
                          const DebugLevel debug = SSL_WARN
                       );
@@ -446,8 +444,6 @@ private:
     std::vector<SSLSession> m_sessions;
     // as well as the maximmum number of sessions we can store
     const size_t m_max_sessions;
-    // store the pin to fetch an RNG see from
-    const int m_analog_pin;
     // store whether to enable debug logging
     const DebugLevel m_debug;
     // store if we are connected in bearssl or not
