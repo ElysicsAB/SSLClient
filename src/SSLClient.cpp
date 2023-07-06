@@ -38,7 +38,7 @@ SSLClient::SSLClient(  Client& client,
 }
 
 void SSLClient::initBear(   const br_x509_trust_anchor *trust_anchors, 
-                             const size_t trust_anchors_num, 
+                             const size_t trust_anchors_num
                         )
                         {
 
