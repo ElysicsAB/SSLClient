@@ -25,7 +25,7 @@
 #ifndef _ECCX08_ASN1_H_
 #define _ECCX08_ASN1_H_
 
-#include "bearssl/bearssl.h"
+#include "../bearssl.h"
 
 size_t
 eccX08_sign_asn1(const br_ec_impl *impl,
