@@ -1,9 +1,14 @@
 # SSLClient
 
-Elysics changes: Fix compile warning
+## Elysics changes: 
+
+### Fix compile warning
 
 >   SSLClient/src/SSLClientParameters.cpp:5:67: warning: 'noreturn' function does return\
 >      void __attribute__((weak)) __throw_length_error(char const*) {}
+
+### Separate init TAs in sslClient
+Makes it possible to add a certificate later
 
 
 ## Info
