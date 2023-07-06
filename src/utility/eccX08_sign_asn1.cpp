@@ -23,7 +23,6 @@
  * SOFTWARE.
  */
 
-#include "ArduinoBearSSL.h"
 
 #ifndef ARDUINO_DISABLE_ECCX08
 #include "eccX08_asn1.h"
