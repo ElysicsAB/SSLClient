@@ -23,6 +23,12 @@
 #include "SSLClientParameters.h"
 #include <vector>
 
+#ifndef ARDUINO_DISABLE_ECCX08
+#include <ArduinoECCX08.h>
+#endif
+
+#include "utility/eccX08_asn1.h"
+
 #ifndef SSLClient_H_
 #define SSLClient_H_
 
