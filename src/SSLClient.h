@@ -93,18 +93,18 @@ public:
      * @param max_sessions The maximum number of SSL sessions to store connection information from.
      * @param debug The level of debug logging (use the ::DebugLevel enum).
      */
-    explicit SSLClient( Client& client, 
-                        const br_x509_trust_anchor *trust_anchors, 
-                        const size_t trust_anchors_num, 
-                        const int analog_pin, 
-                        const size_t max_sessions = 1,
-                        const DebugLevel debug = SSL_WARN);
+    explicit SSLClient( );
 
     //========================================
     //= Functions implemented in SSLClient.cpp
     //========================================
 
-    void replaceTrustAnchors(const br_x509_trust_anchor *trust_anchors, const size_t trust_anchors_num);
+    void initBear(   Client& client, 
+                     const br_x509_trust_anchor *trust_anchors, 
+                     const size_t trust_anchors_num, 
+                     const int analog_pin, 
+                     const size_t max_sessions = 1,
+                     const DebugLevel debug = SSL_WARN);
 
     /**
      * @brief Connect over SSL to a host specified by an IP address.
