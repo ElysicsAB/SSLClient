@@ -10,6 +10,7 @@
 ### Separate init TAs in sslClient
 Makes it possible to add a certificate later
 
+### Use random instead of analog input pin
 
 ## Info
 
