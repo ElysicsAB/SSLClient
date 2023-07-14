@@ -29,7 +29,7 @@
 void
 br_ssl_client_init_full(br_ssl_client_context *cc,
 	br_x509_minimal_context *xc,
-	const br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num)
+	br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num)
 {
 	/*
 	 * The "full" profile supports all implemented cipher suites.

@@ -98,9 +98,9 @@ public:
      * @param max_sessions The maximum number of SSL sessions to store connection information from.
      * @param debug The level of debug logging (use the ::DebugLevel enum).
      */
-    explicit SSLClient(  Client& client,
-                         const size_t max_sessions = 1,
-                         const DebugLevel debug = SSL_WARN
+    explicit SSLClient( Client& client,
+                        const size_t max_sessions = 1,
+                        const DebugLevel debug = SSL_WARN
                       );
 
     //========================================
@@ -108,8 +108,8 @@ public:
     //========================================
 
     void initBear(   
-                     const br_x509_trust_anchor *trust_anchors, 
-                     const size_t trust_anchors_num
+                    br_x509_trust_anchor *trust_anchors, 
+                    size_t trust_anchors_num
                  );
 
     /**

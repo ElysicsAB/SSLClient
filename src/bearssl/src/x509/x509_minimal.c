@@ -220,7 +220,7 @@ void br_x509_minimal_run(void *ctx);
 void
 br_x509_minimal_init(br_x509_minimal_context *ctx,
 	const br_hash_class *dn_hash_impl,
-	const br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num)
+	br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num)
 {
 	memset(ctx, 0, sizeof *ctx);
 	ctx->vtable = &br_x509_minimal_vtable;

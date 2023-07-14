@@ -53,7 +53,7 @@
 void
 br_client_init_TLS12_only(br_ssl_client_context *cc,
 	br_x509_minimal_context *xc,
-	const br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num)
+	br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num)
 {
 	/*
 	 * The TLS1.2 profile supports widely used implemented cipher suites.

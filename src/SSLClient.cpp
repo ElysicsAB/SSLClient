@@ -22,8 +22,8 @@
 
 /* see SSLClient.h */
 SSLClient::SSLClient(  Client& client,
-                       const size_t max_sessions,
-                       const DebugLevel debug
+                        const size_t max_sessions,
+                        const DebugLevel debug
                     )
                       : m_client(client)
                       , m_debug(debug)
@@ -35,8 +35,8 @@ SSLClient::SSLClient(  Client& client,
                        {
 }
 
-void SSLClient::initBear(   const br_x509_trust_anchor *trust_anchors, 
-                             const size_t trust_anchors_num
+void SSLClient::initBear(  br_x509_trust_anchor *trust_anchors, 
+                           size_t trust_anchors_num
                         )
                         {
 
@@ -289,8 +289,10 @@ void SSLClient::removeSession(const char* host) {
 
 /* see SSLClient.h */
 void SSLClient::setMutualAuthParams(const SSLClientParameters& params) {
+    Serial.println("setMutualAuthParams");
     // if mutual authentication if needed, configure bearssl to support it.
     if (params.getECKey() != NULL) {
+        Serial.println("getECKey");
         br_ssl_client_set_single_ec(    &m_sslctx,
                                         params.getCertChain(),
                                         1,
@@ -301,6 +303,7 @@ void SSLClient::setMutualAuthParams(const SSLClientParameters& params) {
                                         &br_ecdsa_i15_sign_asn1);
     }
     else if (params.getRSAKey() != NULL) {
+        Serial.println("getRSAKey");
         br_ssl_client_set_single_rsa(   &m_sslctx,
                                         params.getCertChain(),
                                         1,

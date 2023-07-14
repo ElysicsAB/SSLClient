@@ -697,7 +697,7 @@ typedef struct {
 	int16_t min_rsa_size;
 
 	/* Configured trust anchors. */
-	const br_x509_trust_anchor *trust_anchors;
+	br_x509_trust_anchor *trust_anchors;
 	size_t trust_anchors_num;
 
 	/*
@@ -756,7 +756,7 @@ extern const br_x509_class br_x509_minimal_vtable;
  */
 void br_x509_minimal_init(br_x509_minimal_context *ctx,
 	const br_hash_class *dn_hash_impl,
-	const br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num);
+	br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num);
 
 /**
  * \brief Set a supported hash function in an X.509 "minimal" engine.
@@ -838,7 +838,7 @@ br_x509_minimal_set_ecdsa(br_x509_minimal_context *ctx,
  * \param trust_anchors_num   number of trust anchors.
  */
 void br_x509_minimal_init_full(br_x509_minimal_context *ctx,
-	const br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num);
+	br_x509_trust_anchor *trust_anchors, size_t trust_anchors_num);
 
 /**
  * \brief Set the validation time for the X.509 "minimal" engine.
